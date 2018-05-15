@@ -1,31 +1,57 @@
-<?xml version="1.0"?>
-
-<!-- Configuration Start: Please customize following configuration -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="phonegap-web-template.pulipuli.info" version="1.0.0">
-    
-    <name>布丁布丁吃什麼？</name>
-    <description>這顆布丁是在無聊的世界中找尋樂趣的一種不能吃的食物。喜歡動漫畫、喜歡遊戲、喜歡程式、喜歡跟世間脫節的生活步調中，撰寫blog──布丁布丁吃什麼？ http://blog.pulipuli.info/</description>
-    <author href="http://blog.pulipuli.info" email="pulipuli.chen@gmail.com">布丁布丁吃布丁</author>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Configuration Start: Please customize following configuration -->
+        <title>台北科技大學</title>
+        <!-- Configuration End -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='style.css' rel='stylesheet' type='text/css'/>
+        <script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <div class="content-container">
+                <img src="spin.svg" />
+                <div>
+                    <!-- Configuration Start: Please customize following configuration -->
+                    <h1>校務活動訊息</h1>
+                    <div class="description"><span>這裡顯示大標題<br /顯示圖片</span></div>
+                    <div class="img"><img src="https://sec.ntut.edu.tw/ezfiles/11/1011/pictures/472/part_77329_5241812_55744.jpg"></div>
+     <!-- Configuration End -->
+                </div>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+<div class="container clearfix">
+<p>
+<span class="blog-copyright">
+    <!-- Configuration Start: Please customize following configuration -->
+    © Copyright 2017 <a href="http://blog.pulipuli.info/">台北科技大學</a>
     <!-- Configuration End -->
-  
-    <!--  allows access to any external resource. -->
-    <access origin="*"/>
-    <allow-navigation href="*" />
-  
-    <content src="index.html"/>
-    <icon src="icon.png"/>
-  
-    <!-- https://build.phonegap.com/current-support -->
-    <preference name="phonegap-version" value="cli-6.5.0" />
-    
-    <!-- 防止太多權限 -->
-    <preference name="permissions" value="none" />
-    
-    <!-- 只保留最低的權限 -->
-    <feature name="http://api.phonegap.com/1.0/network" />
-    
-    <!-- 外掛 -->
-    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
-    <plugin name="cordova-plugin-network-information" spec="~1.3.3" />
-    <plugin name="cordova-plugin-whitelist" spec="~1.3.2" />
-</widget>
+</span>
+</p>
+</div>
+</div>
+        <script type="text/javascript">
+                // device APIs are available
+                function onDeviceReady() {
+                    if (history.length > 1) {
+                        navigator.app.exitApp();
+                        return;
+                    }
+                    
+                    //alert(navigator.network.connection.type);
+                    if (navigator.network.connection.type === Connection.NONE) {
+                        //location.replace("offline.html");
+                        location.href = "offline.html";
+                    } else {
+                        // <!-- Configuration Start: Please customize following configuration -->
+                        location.replace("http://blog.pulipuli.info/");
+                        // <!-- Configuration End -->
+                    }
+                }
+                document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+    </body>
+</html>
